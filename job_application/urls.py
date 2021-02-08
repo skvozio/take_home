@@ -5,15 +5,6 @@ from django.conf.urls import url
 from job_application.views import schema_view
 
 
-
-
-
-
-urlpatterns = [
-
-]
-
-
 router = routers.DefaultRouter()
 router.register(r'applications', views.JobApplicationViewSet, "applications")
 
