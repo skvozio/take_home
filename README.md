@@ -1,4 +1,4 @@
-##Job applications tracker API
+## Job applications tracker API
 API to help with job applications tracking: to what position,
 where, when, what is expected salary there. This is an idea for
 personal project that came to my mind some time ago, after I realized I need to track my
