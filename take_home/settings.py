@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY') or '123SecretKey'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG') or False
 
 ALLOWED_HOSTS = []
 
@@ -89,12 +89,11 @@ WSGI_APPLICATION = 'take_home.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': os.environ.get('DATABASE_NAME') or 'job_apps',
-        'USER': os.environ.get('DATABASE_USER') or 'skvozio',
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD') or 'j2@k7o()3',
-        'HOST': os.environ.get('DATABASE_HOST') or '127.0.0.1',
-        'PORT': os.environ.get('DATABASE_PORT') or '5432',
-
+        'NAME': os.environ.get('DATABASE_NAME', 'database'),
+        'USER': os.environ.get('DATABASE_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'postgres'),
+        'HOST': os.environ.get('DATABASE_HOST', '127.0.0.1'),
+        'PORT': os.environ.get('DATABASE_PORT', 5432),
     }
 }
 
@@ -142,3 +141,4 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
