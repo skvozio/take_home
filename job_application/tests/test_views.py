@@ -79,7 +79,7 @@ class GetApplicationByID(TestCase):
         self.assertEqual(response.data[0], serializer.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-class CreateNewPuppyTest(TestCase):
+class CreateNewApplicationTest(TestCase):
     def setUp(self):
         self.valid_payload = {
             'title': 'Project Manager',
