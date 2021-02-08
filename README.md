@@ -1,3 +1,9 @@
+##Job applications tracker API
+API to help with job applications tracking: to what position,
+where, when, what is expected salary there. This is an idea for
+personal project that came to my mind some time ago, after I realized I need to track my
+applications not in Excel sheet :)
+
 ## Dependencies
   1. Install Python 3.7.5 or later
   2. Install Postgres and Postgis
