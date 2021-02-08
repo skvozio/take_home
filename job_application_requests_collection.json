@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "4e178fd9-8dff-422d-8503-f0385c71a0da",
+		"name": "REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/applications",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/applications/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"applications",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET by id, invalid id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/applications/15",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"applications",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET with search query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/applications?end=2021-02-09&title=Junior",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"applications"
+					],
+					"query": [
+						{
+							"key": "end",
+							"value": "2021-02-09"
+						},
+						{
+							"key": "title",
+							"value": "Junior"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET with invalid query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/applications?date_applied=invalid",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"applications"
+					],
+					"query": [
+						{
+							"key": "date_applied",
+							"value": "invalid"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST valid",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"was_referred\": true,\n    \"url\": \"http://linkedin.com/wonderful_company/jobs/12\",\n    \"salary\": 64000,\n    \"title\": \"Software Developer\",\n    \"address\": \"Somewhere in Canada, work from home\",\n    \"contact_name\": \"John Smith\",\n    \"company_name\": \"Wonderful Inc.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/applications/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"applications",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
