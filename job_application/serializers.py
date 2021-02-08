@@ -1,12 +1,10 @@
 from job_application.models import JobApplication
 from rest_framework_gis import serializers
-from rest_framework.serializers import URLField
+from rest_framework.serializers import URLField, IntegerField
 
 
 class JobApplicationSerializer(serializers.GeoModelSerializer):
-    url = URLField()
-
-
+    url = URLField(required=False)
 
     class Meta:
         model = JobApplication
