@@ -7,6 +7,7 @@ Django==3.1.6
 django-cors-headers==3.7.0
 django-rest-framework==0.1.0
 djangorestframework==3.12.2
+djangorestframework-gis==0.17
 drf-url-filters==0.5.1
 drf-yasg==1.20.0
 idna==2.10
